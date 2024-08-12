@@ -10,6 +10,12 @@ MP3 file farming software using automated linux terminal commands.
 ## External Dependancies:
 You will be required to install ytdlp, ffmpeg and youtubesearchpython
 All of this can be done using the following commands:
-'''bash
+```YoutubeDLP
 pip install ytdlp
-'''
+```
+```FFMPEG
+sudo apt install ffmpeg
+```
+```YoutubeSearchPython
+pip install youtubesearchpython
+```
