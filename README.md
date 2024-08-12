@@ -8,8 +8,8 @@ MP3 file farming software using automated linux terminal commands.
 4. Finally, you can get rid of any remaining .mp4 files left in the directory - inside teh 'MPTHREE' directory is all the .mp3 files
 
 ## External Dependancies:
-You will be required to install ytdlp, ffmpeg and youtubesearchpython
-\n All of this can be done using the following commands:
+- You will be required to install ytdlp, ffmpeg and youtubesearchpython
+- All of this can be done using the following commands:
 ```YoutubeDLP
 pip install ytdlp
 ```
