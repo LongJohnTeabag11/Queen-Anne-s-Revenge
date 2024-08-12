@@ -1,10 +1,5 @@
-import subprocess
-import yt_dlp
-from youtubesearchpython import VideosSearch
-import signal
-import os
 import ffmpeg
-
+import time
 
 def url_load():
     url_list = []
@@ -17,7 +12,7 @@ def url_load():
             if results['result']:
                 video_url = results['result'][0]["link"]
                 url_list.append(video_url)
-        treasure_map(url_list)
+        mpv_call(url_list)
 
 
 def record_audio(title, duration, command):
@@ -34,7 +29,7 @@ def record_audio(title, duration, command):
         pass
 
 
-def battle_time(active_url, command):
+def youtubedlp_call(active_url, command):
     ydl_opts = dict(quiet=True, format='bestaudio/best', noplaylist=True, skip_download=True,
                     force_generic_extractor=True)
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -47,12 +42,15 @@ def battle_time(active_url, command):
         record_audio(title, duration, command)
 
 
-def treasure_map(url_list):
+def mpv_call(url_list):
     p = 0
+    afk_time = len(url_list) * 3
+    print(f"Check on your PC again in {afk_time} Minutes \n - MAKE SURE AUTOMATIC SUSPEND IS DISABLED !")
+    time.sleep(3)
     for i in range(len(url_list)):
         active_url = (url_list[p])
         command = f'mpv {active_url}'
-        battle_time(active_url, command)
+        youtubedlp_call(active_url, command)
         p += 1
 
     with open("Songs", "w") as file:
@@ -70,4 +68,5 @@ def main1():
             if results['result']:
                 video_url = results['result'][0]["link"]
                 url_list.append(video_url)
-        treasure_map(url_list)
+        mpv_call(url_list)
+
