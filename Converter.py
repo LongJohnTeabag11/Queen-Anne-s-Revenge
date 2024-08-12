@@ -36,3 +36,6 @@ def main2():
     convert(titles_list)
 
 
+    convert(titles_list)
+
+
